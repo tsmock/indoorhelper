@@ -11,25 +11,32 @@
 ** Call "ant help" to get possible build targets.
 **
 -->
-<project name="myPluginName" default="dist" basedir=".">
+<project name="indoorhelper" default="dist" basedir=".">
 
     <!-- enter the SVN commit message -->
-    <property name="commit.message" value="Commit message"/>
+    <property name="commit.message" value="Inital commit"/>
     <!-- enter the *lowest* JOSM version this plugin is currently compatible with -->
     <property name="plugin.main.version" value="7001"/>
 
     <!-- Configure these properties (replace "..." accordingly).
-         See https://josm.openstreetmap.de/wiki/DevelopersGuide/DevelopingPlugins
-    -->
-    <property name="plugin.author" value="..."/>
-    <property name="plugin.class" value="..."/>
-    <property name="plugin.description" value="..."/>
-    <property name="plugin.icon" value="..."/>
-    <property name="plugin.link" value="..."/>
-    <!--<property name="plugin.early" value="..."/>-->
-    <!--<property name="plugin.requires" value="..."/>-->
-    <!--<property name="plugin.stage" value="..."/>-->
 
+
+
+         See http://josm.openstreetmap.de/wiki/DevelopersGuide/DevelopingPlugins
+    -->
+    <property name="plugin.author" value="Erik Gruschka"/>
+    <property name="plugin.class" value="org.openstreetmap.josm.plugins.indoorhelper.IndoorHelperPlugin"/>
+    <property name="plugin.description" value="Gives assistance for the mapping process of indoor OSM building data. Includes a validator and a mappaint style for indoor-data."/>
+    <property name="de_plugin.description" value="Plug-In zur Hilfe bei der Erstellung von Innenraumdaten. Beinhaltet einen Validator für die erstellten Daten und einen Renderstil um diese übersichtlich darzustellen."/>	
+    <property name="plugin.icon" value="images/dialogs/indoorhelper.png"/>
+    <property name="plugin.link" value="http://wiki.openstreetmap.org/wiki/JOSM/Plugins/indoorhelper"/>
+    <property name="plugin.early" value="true"/>
+    <!-- <property name="plugin.requires" value="PicLayer"/> -->
+    <property name="plugin.stage" value="50"/>
+    
+	<property name="josm" location="../../core/dist/josm-custom.jar"/>
+	<property name="plugin.dist.dir" value="../../dist"/>
+	
     <!-- ** include targets that all plugins have in common ** -->
     <import file="../build-common.xml"/>
   
